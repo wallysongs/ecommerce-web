@@ -1,0 +1,28 @@
+<header>
+    <nav>
+        <img src="../../../../assets/icones/logotipo-maximatech.png">
+        <div (click)="dropDownCadastro = !dropDownCadastro">
+            <div>
+                <p>Cadastro</p>
+                <img src="../../../../assets/icones/triangulo.png" />
+            </div>
+            <ul *ngIf="dropDownCadastro">
+                <li routerLink="/administrativo/">Cliente</li>
+                <li routerLink="/administrativo/">Produto</li>
+            </ul>
+        </div>
+        <div (click)="dropDownPedido = !dropDownPedido">
+            <div>
+                <p>Pedido</p>
+                <img src="../../../../assets/icones/triangulo.png" />
+            </div>
+            <ul *ngIf="dropDownPedido">
+                <li routerLink="/administrativo/pedidos/new">Novo Pedido</li>
+                <li routerLink="/administrativo/pedidos/">Consultar Pedido</li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

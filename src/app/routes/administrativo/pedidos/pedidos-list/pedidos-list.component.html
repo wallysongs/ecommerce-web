@@ -1,0 +1,22 @@
+<h1>Consulta pedido</h1>
+
+<wrapper titulo="Pedidos" icon="pedido">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Valor Total</th>
+                <th>Quant. de itens</th>
+                <th>Valor do frete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pedido of pedidos">
+                <td>{{ pedido.id }}</td>
+                <td>{{ pedido.valorTotal | currency:'BRL':'symbol':'1.2-2' }}</td>
+                <td>{{ pedido.quantidadeProduto }}</td>
+                <td>{{ pedido.valorFrete | currency:'BRL':'symbol':'1.2-2' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</wrapper>

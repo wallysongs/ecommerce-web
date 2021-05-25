@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: EuclidCircularB;
+    src: url('./assets/fontes/EuclidCircularB-Regular.otf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e5e5e5;
+    font-family: 'EuclidCircularB';
+}

@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="input">
+        <input type="text" [readOnly]="selecionado" [(ngModel)]="value" placeholder="{{ placeholder }}" />
+        <button [class.hidden]="selecionado" (click)="consultar()">
+            <img src="../../../../assets/icones/icone-pesquisa.png">
+        </button>
+        <button [class.hidden]="!selecionado" (click)="removerItem()">
+            <img src="../../../../assets/icones/icone-apagar.png">
+        </button>
+    </div>
+    <div class="resultado">
+        <ul>
+            <li *ngFor="let item of itens" (click)="itemSelecionado(item)">{{ item.nome }}</li>
+        </ul>
+    </div>
+</div>

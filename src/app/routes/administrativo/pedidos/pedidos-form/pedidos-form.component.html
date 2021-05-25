@@ -1,0 +1,54 @@
+<h1>Novo Pedido</h1>
+
+<wrapper titulo="Cliente" icon="cliente">
+    <input-auto-complete-select-one
+        (selecionouItem)="adicionarCliente($event)"
+        (realizouConsulta)="consultarCliente($event)"
+        (removeuItem)="removerCliente()"
+        [itens]="listaClientes"
+        placeholder="Informe um cliente *"
+    ></input-auto-complete-select-one>
+</wrapper>
+
+<wrapper titulo="Carrinho" icon="carrinho">
+    <div>
+        <input-auto-complete
+            (selecionouItem)="adicionarProduto($event)"
+            (realizouConsulta)="consultarProduto($event)"
+            [itens]="listaProdutos"
+            placeholder="Pesquise um produto"></input-auto-complete>
+
+        <div *ngFor="let item of pedido.itens">
+            <item-pedido [item]="item" (alterouQuantidade)="alterarQuantidade($event)" (removeuProduto)="removerProduto($event)" ></item-pedido>
+        </div>
+        
+        <div *ngIf="pedido.itens.length === 0" class="carrinho-vazio">
+            <img src="../../../../../assets/icones/imagem-carrinho-empty-state.png">
+            <h5>Carrinho vazio</h5>
+            <h6>Nenhum produto foi inserido</h6>
+        </div>
+    </div>
+</wrapper>
+
+<wrapper titulo="Total" icon="total">
+    <div class="box-total">
+        <ul>
+            <li>
+                <span>Itens</span>
+                <span>{{ valorTotalProdutos | currency:'BRL':'symbol':'1.2-2' }}</span>
+            </li>
+            <li>
+                <span>Frete</span>
+                <span>{{ pedido.valorFrete | currency:'BRL':'symbol':'1.2-2' }}</span>
+            </li>
+            <li class="total">
+                <span>Total</span>
+                <span>{{ valorTotalPedido | currency:'BRL':'symbol':'1.2-2' }}</span>
+            </li>
+        </ul>
+        <div>
+            <button (click)="finalizarPedido()">Finalizar pedido</button>
+            <button (click)="limparCarrinho()">Limpar carrinho</button>
+        </div>
+    </div>
+</wrapper>

@@ -1,0 +1,23 @@
+<div class="item">
+    <div class="info-produto">
+        <img src="{{ item.produto.imagemUrl }}" alt="">
+        <div>
+            <p>{{ item.produto.codigo }}</p>
+            <p>{{ item.produto.nome }}</p>
+        </div>
+    </div>
+    <div class="quantidade-valor">
+        <div>
+            <div>
+                <input type="text" value="{{ item.quantidade }}" (input)="alterarQuantidade(item)" #quantidade >
+                <p>x {{ item.produto.precoUnitario | currency:'BRL':'symbol':'1.2-2' }}</p>
+            </div>
+            <p>
+                {{ valorTotalProduto | currency:'BRL':'symbol':'1.2-2' }}
+            </p>
+        </div>
+        <button (click)="removerItem(item)">
+            X
+        </button>
+    </div>
+</div>

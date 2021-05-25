@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="input">
+        <input type="text" [(ngModel)]="value" placeholder="{{ placeholder }}" />
+        <button [style.display]="itens.length === 0 ? 'block' : 'none'" (click)="consultar()">
+            <img src="../../../../assets/icones/icone-pesquisa.png">
+        </button>
+        <button [style.display]="itens.length !== 0 ? 'block' : 'none'" (click)="limparConsulta()">
+            <img src="../../../../assets/icones/icone-apagar.png">
+        </button>
+    </div>
+    <div class="resultado">
+        <ul>
+            <li *ngFor="let item of itens" (click)="itemSelecionado(item)">{{ item.nome }}</li>
+        </ul>
+    </div>
+</div>

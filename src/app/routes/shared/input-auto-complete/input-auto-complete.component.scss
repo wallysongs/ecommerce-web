@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+
+    .input {
+        border: 1px solid #999;
+        border-radius: 4px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+    
+        input {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #999;
+        }
+    
+        button {
+            cursor: pointer;
+            border: none;
+            background: transparent;
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .resultado {
+        position: relative;
+
+        ul {
+            z-index: 1000;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.12);
+            border-radius: 10px;
+            position: absolute;
+            width: 100%;
+
+            li {
+                font-size: 16px;
+                margin: 0;
+                padding-left: 30px;
+                color: #999;
+    
+    
+                &:hover {
+                    background: #eee;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+}

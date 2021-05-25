@@ -1,0 +1,12 @@
+<section>
+    <form action="" (keyup.enter)="login()">
+        <img src="../../../../../assets/icones/logotipo-maximatech.png" />
+        <p>
+            <input type="text" [(ngModel)]="usuario.nome" name="nome" autocomplete="off" placeholder="Usuário" />            
+        </p>
+        <p>
+            <input type="password" [(ngModel)]="usuario.senha" name="password" placeholder="Senha" />
+        </p>
+        <button (click)="login()">Entrar</button>
+    </form>
+</section>
