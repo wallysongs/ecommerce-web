@@ -28,8 +28,10 @@ export class ItemPedidoComponent implements OnInit {
 
     let quantidade = Number.parseInt(this.quantidade.nativeElement.value);
 
+
     if(Number.isNaN(quantidade)) {
       quantidade = 1;
+      this.quantidade.nativeElement.value = 1;
     }
 
     if (Number.isInteger(quantidade) && quantidade > 0) {
