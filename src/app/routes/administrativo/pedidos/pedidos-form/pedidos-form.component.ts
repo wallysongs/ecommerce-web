@@ -82,7 +82,7 @@ export class PedidosFormComponent {
   }
 
   alterarQuantidade(item: ItemPedido) {
-    let index = this.pedido.itens.findIndex(item => item.produto.id === item.produto.id);
+    let index = this.pedido.itens.findIndex(ItemPedido => ItemPedido.produto.id === item.produto.id);
     this.pedido.itens[index] = item;
     this.atualizarValores()
   }
